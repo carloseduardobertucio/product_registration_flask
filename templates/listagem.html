@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Listagem de Produtos</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for produto in produtos %}
+        <tr>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.valor }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('cadastro') }}" class="button">Cadastrar Novo Produto</a>
+{% endblock %}

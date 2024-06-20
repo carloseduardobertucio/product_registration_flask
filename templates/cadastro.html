@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Cadastrar Novo Produto</h2>
+<form method="POST" action="{{ url_for('cadastro') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.nome.label }}<br>
+        {{ form.nome(size=32) }}
+    </div>
+    <div>
+        {{ form.descricao.label }}<br>
+        {{ form.descricao(size=64) }}
+    </div>
+    <div>
+        {{ form.valor.label }}<br>
+        {{ form.valor() }}
+    </div>
+    <div>
+        {{ form.disponivel.label }}<br>
+        {{ form.disponivel() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
